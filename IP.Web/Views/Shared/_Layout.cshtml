@@ -2,47 +2,108 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <title>@ViewBag.Title - Inventors' Portfolios</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/bootstrap/css/bootstrap.min.css")
         @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+        
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                 </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class="active"><a href="#">ePortfolio</a></li>
+                        <li><a href="#">Workshops</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Victor Girotto</a></li>
+                        <li><a href="#">Log Out</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+
+                <h1 class="logo">Inventors' Portfolios</h1>
+
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">My Portfolios</a>
+                    </li>
+                    <li>
+                        <a href="#">Web Development</a>
+                    </li>
+                    <li>
+                        <a href="#">Arduino</a>
+                    </li>
+                    <li>
+                        <a href="#">Spanish</a>
+                    </li>
+                    <li>
+                        <a href="#">Oboe Playing</a>
+                    </li>
+                </ul>
+
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">Community</a>
+                    </li>
+                    <li>
+                        <a href="#">Search</a>
+                    </li>
+                    <li>
+                        <a href="#">Friends</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Page content -->
+            <div id="page-content-wrapper">
+                <div class="content-header">
+                    <h1>
+                        <button id="menu-toggle" type="button" class="sidebar-toggle">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @ViewBag.Title
+                    </h1>
+                </div>
+                <!-- Keep all page content within the page-content inset div! -->
+                <div class="page-content inset">
+                    @RenderBody()
                 </div>
             </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
-                </div>
-            </div>
-        </footer>
 
         @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/Scripts/bootstrap-js/bootstrap.min.js")
         @RenderSection("scripts", required: false)
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("active");
+            });
+        </script>
     </body>
 </html>
