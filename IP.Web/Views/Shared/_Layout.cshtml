@@ -1,109 +1,115 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title - Inventors' Portfolios</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/bootstrap/css/bootstrap.min.css")
-        @Styles.Render("~/Content/css")
-    </head>
-    <body>
-        
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Inventors' Portfolios</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/bootstrap/css/bootstrap.min.css")
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="left-bg-color"></div>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active"><a href="#">ePortfolio</a></li>
+                    <li><a href="#">Workshops</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Victor Girotto</a></li>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+
+            <h1 class="logo">Inventors' Portfolios</h1>
+
+            <ul class="sidebar-nav">
+                <li>
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+            </ul>
+
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">My Portfolios</a>
+                </li>
+                <li>
+                    @Html.ActionLink("Web Development", "Index", "Portfolio")
+                </li>
+                <li>
+                    @Html.ActionLink("Arduino", "Index", "Portfolio")
+                </li>
+                <li>
+                    @Html.ActionLink("Spanish", "Index", "Portfolio")
+                </li>
+                <li>
+                    @Html.ActionLink("Oboe Reed Making", "Index", "Portfolio")
+                </li>
+            </ul>
+
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">Community</a>
+                </li>
+                <li>
+                    <a href="#">Search</a>
+                </li>
+                <li>
+                    <a href="#">Friends</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="content-header">
+                <h1>
+                    <button id="menu-toggle" type="button" class="sidebar-toggle">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    
-                    <ul class="nav navbar-nav navbar-left">
-                        <li class="active"><a href="#">ePortfolio</a></li>
-                        <li><a href="#">Workshops</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Victor Girotto</a></li>
-                        <li><a href="#">Log Out</a></li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
-
-        <div id="wrapper">
-
-            <!-- Sidebar -->
-            <div id="sidebar-wrapper">
-
-                <h1 class="logo">Inventors' Portfolios</h1>
-
-                <ul class="sidebar-nav">
-                    <li class="sidebar-brand">
-                        <a href="#">My Portfolios</a>
-                    </li>
-                    <li>
-                        <a href="#">Web Development</a>
-                    </li>
-                    <li>
-                        <a href="#">Arduino</a>
-                    </li>
-                    <li>
-                        <a href="#">Spanish</a>
-                    </li>
-                    <li>
-                        <a href="#">Oboe Playing</a>
-                    </li>
-                </ul>
-
-                <ul class="sidebar-nav">
-                    <li class="sidebar-brand">
-                        <a href="#">Community</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                    <li>
-                        <a href="#">Friends</a>
-                    </li>
-                </ul>
-
+                    @ViewBag.Title
+                </h1>
             </div>
-
-            <!-- Page content -->
-            <div id="page-content-wrapper">
-                <div class="content-header">
-                    <h1>
-                        <button id="menu-toggle" type="button" class="sidebar-toggle">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        @ViewBag.Title
-                    </h1>
-                </div>
-                <!-- Keep all page content within the page-content inset div! -->
-                <div class="page-content inset">
-                    @RenderBody()
-                </div>
+            <!-- Keep all page content within the page-content inset div! -->
+            <div class="page-content inset">
+                @RenderBody()
             </div>
         </div>
+    </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/Scripts/bootstrap-js/bootstrap.min.js")
-        @RenderSection("scripts", required: false)
-        <script>
-            $("#menu-toggle").click(function (e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("active");
-            });
-        </script>
-    </body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/bootstrap-js/bootstrap.min.js")
+    @RenderSection("scripts", required: false)
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("active");
+        });
+    </script>
+</body>
 </html>
