@@ -177,6 +177,7 @@ body > .navbar-default {
     }
 
     #wrapper {
+        width: 100%;
         padding-left: 0;
     }
 
@@ -185,6 +186,9 @@ body > .navbar-default {
         position: fixed;
         left: 0;
         margin-left: -250px;
+    }
+
+    #page-content-wrapper {
     }
 
     #wrapper.active {
@@ -214,6 +218,13 @@ body > .navbar-default {
     .active .content-header {
         background: white;
         transition: all 0.4s ease 0s;
+    }
+}
+
+@media (min-width:768px) and (max-width:992px){
+    #wrapper {
+        width: 100%;
+        padding-left: 250px;
     }
 }
 
