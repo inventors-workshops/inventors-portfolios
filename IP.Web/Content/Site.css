@@ -1,20 +1,34 @@
 ﻿/* Elements */
 
 body {
-    padding-top: 50px;
+    padding-top: 40px;
+}
+
+.left-bg-color {
+    background: #2980b9;
+    position: fixed;
+    width: 50%;
+    z-index: 0;
+    height: 100%;
 }
 
 /* Fixed width sidebar layout */
+
+.navbar {
+    min-height: 40px;
+}
 
 body > .navbar-default {
     border-width: 0;
     border-radius: 0;
     margin-bottom: 0;
     background: #333;
+    height: 35px;
 }
 
 .navbar-default .navbar-nav li > a {
     color: white;
+    padding: 10px;
 }
 
 .navbar-default .navbar-nav li > a:hover,
@@ -24,16 +38,18 @@ body > .navbar-default {
 }
 
 #wrapper {
+    width: 960px;
     padding-left: 250px;
     transition: all 0.4s ease 0s;
+    margin: 0 auto;
+    position: relative;
 }
 
 #sidebar-wrapper {
-    margin-left: -250px;
-    left: 250px;
+    left: 0px;
     width: 250px;
     background: #2980b9;
-    position: fixed;
+    position: absolute;
     height: 100%;
     overflow-y: auto;
     z-index: 1000;
@@ -49,12 +65,14 @@ body > .navbar-default {
 
 #page-content-wrapper {
     width: 100%;
+    height: 100%;
+    background: white;
 }
 
 .sidebar-nav {
     width: 250px;
     list-style: none;
-    margin: 0;
+    margin: 0 0 5px 0;
     padding: 0;
 }
 
@@ -81,8 +99,8 @@ body > .navbar-default {
             }
 
     .sidebar-nav > .sidebar-brand {
-        height: 55px;
-        line-height: 55px;
+        height: 40px;
+        line-height: 40px;
         font-size: 18px;
         background: rgba(255,255,255,0.2);
     }
@@ -150,13 +168,27 @@ body > .navbar-default {
 }
 
 @media (max-width:767px) {
+    body {
+        padding-top: 0;
+    }
+
+    .navbar {
+        display: none;
+    }
 
     #wrapper {
+        width: 100%;
         padding-left: 0;
     }
 
     #sidebar-wrapper {
         left: 0;
+        position: fixed;
+        left: 0;
+        margin-left: -250px;
+    }
+
+    #page-content-wrapper {
     }
 
     #wrapper.active {
@@ -186,6 +218,13 @@ body > .navbar-default {
     .active .content-header {
         background: white;
         transition: all 0.4s ease 0s;
+    }
+}
+
+@media (min-width:768px) and (max-width:992px){
+    #wrapper {
+        width: 100%;
+        padding-left: 250px;
     }
 }
 
@@ -219,5 +258,26 @@ body > .navbar-default {
     display: block;
     font-size: 0.7em;
     color: #999;
+    margin-bottom: 10px;
+}
+
+.icon-grid {
+    list-style-type: none;
+}
+
+.icon-grid li {
+    display: inline-block;
+    width: 160px;
+    height: 170px;
+    margin: 0 20px 20px 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.icon-grid-thumb {
+    height: 140px;
+    width: 140px;
+    background: #CCC;
+    border-radius: 70px;
     margin-bottom: 10px;
 }
