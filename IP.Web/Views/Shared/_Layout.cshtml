@@ -95,6 +95,7 @@
                     @ViewBag.Title
                 </h1>
             </div>
+            @RenderSection("pageActions", required: false)
             <!-- Keep all page content within the page-content inset div! -->
             <div class="page-content inset">
                 @RenderBody()
