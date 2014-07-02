@@ -264,7 +264,10 @@
     <Content Include="Images\guy1.jpg" />
     <Content Include="Images\girl1.PNG" />
     <Content Include="Images\guy3.PNG" />
+    <Content Include="Images\image-icon.png" />
     <Content Include="Images\IW-logo.png" />
+    <Content Include="Images\text-icon.png" />
+    <Content Include="Images\video-icon.png" />
     <Content Include="Scripts\bootstrap-js\bootstrap.js" />
     <Content Include="Scripts\bootstrap-js\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />

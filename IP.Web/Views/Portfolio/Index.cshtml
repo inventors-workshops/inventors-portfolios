@@ -80,20 +80,3 @@
         </li>
     </ul>
 </div>
-
-@section scripts {
-    <script>
-        $(function () {
-            //setIconsBackground();
-        });
-
-        var setIconsBackground = function () {
-            var icons = $(".icon-grid-thumb");
-            $.getJSON('http://www.colourlovers.com/api/colors/new?keywords=dark+blue&jsonCallback=?&size=' + icons.length, function (data) {
-                icons.each(function (index, value) {
-                    $(value).css('background', 'repeat url(' + data[index].imageUrl + ')');
-                });
-            }); 
-        }
-    </script>
-}
